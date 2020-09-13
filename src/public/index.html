@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello there</title>
+    <link rel="stylesheet" type="text/css" href="global.css">
+    <script src="script.js" defer></script>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script src="app.jsx" type="text/babel"></script>
+</head>
+<body>
+    <header class="header-top">
+        <h1 class="heading-title"><a href="/">Title</a></h1>
+        <nav class="navigation">
+            <ul class="navigation-list">
+                <a href="#1" class="navigation-list-itemlink">
+                    <li class="navgiation-list-item">Item 1</li>
+                </a>
+                <a href="#2" class="navigation-list-itemlink">
+                    <li class="navgiation-list-item">Item 2</li>
+                </a>
+                <a href="#3" class="navigation-list-itemlink">
+                    <li class="navgiation-list-item">Item 3</li>
+                </a>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <button id="test-btn">test</button>
+            <div id="test-div">iks de</div>
+            <form class="signup-form" autocomplete="off">
+                <h2>Form title</h2>
+                <div class="form-row">
+                    <label for="first-name">First name:</label>
+                    <input type="text" name="first-name" id="input-first-name">
+                </div>
+                <div class="form-row">
+                    <label for="second-name">Second name:</label>
+                    <input type="text" name="second-name" id="input-second-name">
+                </div>
+                <div class="form-row">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="input-email">
+                </div>
+                <div class="form-row">
+                    <label for="student-class">Class:</label>
+                    <select name="student-class" id="select-student-class">
+                        <option value="1A">1A</option>
+                        <option value="3B">3B</option>
+                        <option value="6C">6C</option>
+                        <option value="8E">8E</option>
+                    </select>
+                </div>
+                <div class="form-row">
+                    <label for="extra">Extracurriculums:</label>
+                    <div class="extras">
+                        <div class="checkbox-row">
+                            <input type="checkbox" name="extra1" class="checkbox-extra">
+                            <label for="extra1">Extra 1 Lorem, ipsum dolor.</label>
+                        </div>
+                        <div class="checkbox-row">
+                            <input type="checkbox" name="extra2" class="checkbox-extra">
+                            <label for="extra2">Extra 2 Lorem, ipsum dolor.</label>
+                        </div>
+                        <div class="checkbox-row">
+                            <input type="checkbox" name="extra3" class="checkbox-extra">
+                            <label for="extra3">Extra 3 Lorem, ipsum dolor.</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <button id="btn-submit" class="btn-submit">Sign up!</button>
+                </div>
+            </form>
+        </section>
+        <div id="root"></div>
+    </main>
+</body>
+</html>
