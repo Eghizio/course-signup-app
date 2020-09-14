@@ -1,4 +1,3 @@
-(() => {
 // trying out react from without webpack etc
 const Input = ({ name, placeholder, setter }) => {
     return (
@@ -66,12 +65,34 @@ const SignUpForm = () => {
     const [selectedClass, setSelectedClass] = React.useState("");
     const [selectedExtras, setSelectedExtras] = React.useState([]);
 
-    const classes = ["1A", "2B", "3C", "4D", "5E", "6F", "7G", "8H"];
+    const classes = ["", "1A", "2B", "3C", "4D", "5E", "6F", "7G", "8H"];
     const extras = ["First", "Second", "Third", "Fourth", "Fifth", "Sixth", "Seventh", "Eight"];
 
     const handleSubmit = () => {
         const formData = { firstName, secondName, email, class: selectedClass, extras: selectedExtras };
         console.log(formData);
+
+        // temp validation xd
+        if(Object.values(formData).some(el => !el)){
+            console.log("Validation failed!"); 
+            return;
+        }
+
+        (async () => {
+            const request = await fetch("http://localhost:7000/api", {
+                method: "POST",
+                mode: "cors",
+                cache: "no-cache",
+                credentials: "same-origin",
+                headers: { "Content-Type": "application/json" },
+                redirect: "follow",
+                referrerPolicy: "no-referrer",
+                body: JSON.stringify(formData)
+            });
+        
+            const response = await request.json();
+            console.log(response);
+        })();
     };
 
     return (
@@ -96,8 +117,3 @@ const SignUpForm = () => {
         </div>
     );
 };
-
-const root = document.querySelector("#root");
-ReactDOM.render(<SignUpForm/>, root);
-
-})();

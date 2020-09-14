@@ -1,0 +1,34 @@
+[
+    {
+        "id": "_zip2137op",
+        "firstName": "John1",
+        "secondName": "Anchor",
+        "email": "janchor@holy.god",
+        "class": "5G",
+        "extras": ["Second", "First", "Third", "Seventh"]
+    },
+    {
+        "id": "_zip2137o1",
+        "firstName": "John2",
+        "secondName": "Anchor",
+        "email": "janchor@holy.god",
+        "class": "5G",
+        "extras": ["Second", "First", "Third", "Seventh"]
+    },
+    {
+        "id": "_zip2137o2",
+        "firstName": "John3",
+        "secondName": "Anchor",
+        "email": "janchor@holy.god",
+        "class": "5G",
+        "extras": ["Second", "First", "Third", "Seventh"]
+    },
+    {
+        "id": "_zip2137o3",
+        "firstName": "John4",
+        "secondName": "Anchor",
+        "email": "janchor@holy.god",
+        "class": "5G",
+        "extras": ["Second", "First", "Third", "Seventh"]
+    }
+]

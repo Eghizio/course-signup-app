@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello there</title>
+    <title>Extracurriculum</title>
+    <link rel="icon" href=favicon.png>
     <link rel="stylesheet" type="text/css" href="global.css">
     <script src="script.js" defer></script>
     <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <!-- <script src="https://unpkg.com/formik/dist/formik.umd.production.min.js"></script> -->
     <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
-    <script src="app.jsx" type="text/babel"></script>
+    <script src="app/utils/sleep.js" type="text/babel"></script>
+    <script src="app/hooks/useFetch.js" type="text/babel"></script>
+    <script src="app/components/Loader.jsx" type="text/babel"></script>
+    <script src="app/components/SignUpForm.jsx" type="text/babel"></script>
+    <script src="app/components/StudentList.jsx" type="text/babel"></script>
+    <script src="app/App.jsx" type="text/babel"></script>
 </head>
 <body>
     <header class="header-top">
@@ -30,7 +37,7 @@
         </nav>
     </header>
     <main>
-        <section>
+        <section style="display: none;">
             <button id="test-btn">test</button>
             <div id="test-div">iks de</div>
             <form class="signup-form" autocomplete="off">
@@ -50,6 +57,7 @@
                 <div class="form-row">
                     <label for="student-class">Class:</label>
                     <select name="student-class" id="select-student-class">
+                        <option value=""></option>
                         <option value="1A">1A</option>
                         <option value="3B">3B</option>
                         <option value="6C">6C</option>
@@ -78,6 +86,7 @@
                 </div>
             </form>
         </section>
+
         <div id="root"></div>
     </main>
 </body>

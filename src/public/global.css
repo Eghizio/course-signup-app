@@ -25,8 +25,9 @@ body{
     color: inherit
 }
 
-.heading-title>a{
+.heading-title>a:hover{
     color: whitesmoke;
+    text-shadow: 1px 1px 3px black;
 }
 
 .navigation{
@@ -60,4 +61,54 @@ body{
 
 main{
     padding: 10px;
+}
+
+
+/*react classes*/
+@keyframes spin{
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.spinner{
+    align-self: center;
+    min-width: 200px;
+    min-height: 200px;
+    max-width: 400px;
+    max-height: 400px;
+    width: 25%;
+    height: 25%;
+    margin: 5px;
+    border-radius: 50%;
+    border-top: 5px solid dodgerblue;
+    animation: spin 0.7s ease-in-out infinite;
+}
+
+.student-list{
+    border: 1px solid blue;
+    list-style-type: none;
+    padding: 0;
+}
+
+.student-list-item{
+    border: 1px solid red;
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+}
+
+.student-list-item>.student-name{
+    width: 20%;
+}
+
+.student-list-item>.student-email{
+    width: 20%;
+}
+
+.student-list-item>.student-class{
+    width: 20%;
+}
+
+.student-list-item>.student-extras{
+    width: 20%;
 }
