@@ -1,6 +1,7 @@
-import generateID from "src/utils/generateID";
 import { Student } from "../types/student";
 import randomStudents from "./randomStudents.json";
+import generateID from "../utils/generateID";
+
 
 export const generateRandomStudents = (amount: number): Student[] => {
     const rndStudents: Student[] = [];

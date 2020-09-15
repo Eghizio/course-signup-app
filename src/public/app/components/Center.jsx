@@ -1,0 +1,1 @@
+const Center = ({ children }) => <div className="centered">{children}</div>;
