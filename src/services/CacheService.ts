@@ -5,31 +5,35 @@ class CacheService{
         this.cache = new Map();
     }
 
+    log(...args: string[]){
+        console.log("\x1b[34m%s\x1b[0m", "[cache] ", ...args);
+    }
+
     set(key: string, value: any){
-        console.log(`Setting "${key}" to cache...`);
+        this.log(`Setting "${key}" to cache...`);
         this.cache.set(key, value);
         return value;
     }
 
     get(key: string){
-        console.log(`Retrieving "${key}" from cache...`);
+        this.log(`Retrieving "${key}" from cache...`);
         return this.cache.get(key);
     }
 
     delete(key: string){
-        console.log(`Deleting "${key}" from cache...`);
+        this.log(`Deleting "${key}" from cache...`);
         return this.cache.delete(key);
     }
 
     clearCache(){
-        console.log("Clearing cache...");
+        this.log("Clearing cache...");
         this.cache.clear();
     }
 
     has(key: string){
         const result = this.cache.has(key);
-        if(result) console.log(`Found cache item for "${key}"...`);
-        else console.log(`No cache item found for "${key}"...`);
+        if(result) this.log(`Found cache item for "${key}"...`);
+        else this.log(`No cache item found for "${key}"...`);
         return result;
     }
 

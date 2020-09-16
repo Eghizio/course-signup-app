@@ -1,0 +1,1 @@
+const Column = ({children}) => <div className="column">{children}</div>;

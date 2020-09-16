@@ -92,6 +92,7 @@ const SignUpForm = () => {
         
             const response = await request.json();
             console.log(response);
+            if(response.status !== 201) alert("Failed to send POST request! JD JD JD")
         })();
     };
 

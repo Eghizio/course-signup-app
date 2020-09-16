@@ -22,15 +22,23 @@ router.get("/", (req, res, next) => {
 
 router.post("/", (req, res, next) => {
     console.log(req.body);
-    const ID = generateID(); // replace with id from db
+    const id = generateID(); // replace with id from db
 
-    cache.set(ID, req.body);
 
-    res.status(201);
-    res.json({
-        status: 201,
-        id: ID
-    });
+    if(Object.keys(req.body).length === 0 && req.body.constructor === Object){
+        const status = 400;
+        const message = "Invalid request body parameters. Format error.";
+
+        res.status(status);
+        res.json({ status, message });
+    }
+    else{
+        cache.set(id, req.body);
+        const status = 201;
+
+        res.status(status);
+        res.json({ status, id });
+    }
 });
 
 router.get("/student/:id", (req, res, next) => {
