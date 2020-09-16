@@ -2,7 +2,6 @@ import express from "express"
 import CacheService from "../services/CacheService";
 import generateID from "../utils/generateID";
 import getRandomStudents from "../utils/getRandomStudents";
-import serializeArrayToCSV from "../utils/serializeArrayToCSV";
 
 
 const router = express.Router();
@@ -10,9 +9,6 @@ const cache = new CacheService(); // temp as db xd
 
 if(process.env.NODE_ENV !== "production"){
     const randomStudents = getRandomStudents(10);
-
-    const serialized = serializeArrayToCSV(randomStudents);
-    console.log(serialized);
 
     randomStudents.forEach(student => {
         if(cache.has(student.id)) return;

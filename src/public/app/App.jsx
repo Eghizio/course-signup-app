@@ -1,22 +1,27 @@
+const Pages = {
+    "Home": { component: Home, name: "Home", url: "/home" },
+    "Browse": { component: BrowseClasses, name: "Browse", url: "/browse" },
+    "SignUp": { component: SignUp, name: "SignUp", url: "/signup" },
+    "TeacherPanel": { component: TeacherPanel, name: "TeacherPanel", url: "/teacherpanel" }
+};
+
+// rewrite to use URLs from pages instead keys/names, can just rename Pages=>navigation and change keys to url
 const App = () => {
-    const [showForm, setShowForm] = React.useState(false);
-    const { loading, error, response } = useFetch("http://localhost:7000/api/students/all", 1200);
+    const { ActivePage, navigate } = useNavigation(Pages, "Home");
+    const APP_TITLE = "Title";
 
     return (
         <React.Fragment>
-            <button onClick={() => setShowForm(prev => !prev)}>
-                Change Screen
-            </button>
-            <Center>
-                {showForm
-                ?   <SignUpForm/>
-                :   error ? <div>Failed to load students.</div>
-                :   <Loader isLoading={loading}>
-                        <StudentList students={response && response.students}/>
-                    </Loader>
-                }
-            </Center>
-        </React.Fragment>  
+            <Header page={ActivePage} navigate={navigate}>
+                {APP_TITLE}
+            </Header>
+            <main>
+                <Center>
+                    {ActivePage && <ActivePage navigate={navigate}/>}
+                </Center>
+            </main>
+            <Footer/>
+        </React.Fragment>
     );
 };
 

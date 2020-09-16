@@ -7,6 +7,10 @@ body{
     margin: 0;
 }
 
+main{
+    padding: 10px;
+}
+
 .header-top{
     display: flex;
     align-items: center;
@@ -16,8 +20,12 @@ body{
     height: 80px;
 }
 
-.heading-title{
+.heading{
     margin-left: 40px;
+}
+
+.heading-title{
+    margin: 0px;
 }
 
 .heading-title>a{
@@ -28,6 +36,31 @@ body{
 .heading-title>a:hover{
     color: whitesmoke;
     text-shadow: 1px 1px 3px black;
+}
+
+.heading-breadcrumbs{
+    display: flex;
+    font-size: small;
+}
+
+.breadcrumb{
+    margin: 0 5px;
+}
+
+.breadcrumb-link{
+    color: inherit;
+    text-decoration: none;
+}
+
+.breadcrumb-link:hover{
+    color: lightsalmon;
+    /* text-shadow: 1px 1px 3px cyan; */
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .navigation{
@@ -58,11 +91,6 @@ body{
     background-color: #6bb6ff;
     text-shadow: 1px 1px 2px black;
 }
-
-main{
-    padding: 10px;
-}
-
 
 /*react classes*/
 @keyframes spin{

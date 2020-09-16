@@ -1,15 +1,6 @@
-// const sampleStudent = {
-//     id: "_zip2137op",
-//     firstName: "John",
-//     secondName: "Anchor",
-//     email: "janchor@holy.god",
-//     class: "5G",
-//     extras: ["Second", "First", "Third", "Seventh"]
-// };
-
 const StudentListItem = ({ student }) => {
     const { width } = useWindowSize();
-    const { id, firstName, secondName, email, class: studentClass, extras } = student;
+    const { firstName, secondName, email, class: studentClass, extras } = student;
 
     return (
         <li className="student-list-item">
@@ -39,22 +30,10 @@ const SORT_QUERY = {
     BY_CLASS: "class",
 };
 
-// change it to table i guess?
+// needs a lot of refactor tbh xD
 const StudentList = ({ students }) => {
-    // const { sortedStudents, sortByName, sortByEmail, sortByClass } = useSortedStudents(students);
     const { width } = useWindowSize();
-
-    // replacement for bloated reducer?
     const [studs, setStuds] = React.useState(students);
-    // const [isNameAscending, setIsNameAscending] = React.useState(false);
-    // const [isEmailAscending, setIsEmailAscending] = React.useState(false);
-    // const [isClassAscending, setIsClassAscending] = React.useState(false);
-    
-    // const isAscending = {
-    //     [SORT_QUERY.BY_NAME]: { get: () => isNameAscending, set: setIsNameAscending },
-    //     [SORT_QUERY.BY_EMAIL]: { get: () => isEmailAscending, set: setIsEmailAscending },
-    //     [SORT_QUERY.BY_CLASS]: { get: () => isClassAscending, set: setIsClassAscending },
-    // };
 
     const [filter, setFilter] = React.useState(null);
     const [filterValueTEMP, setFilterValueTEMP] = React.useState("");
@@ -66,7 +45,6 @@ const StudentList = ({ students }) => {
         setStuds(prev => prev.filter(student => JSON.stringify(student).toLowerCase().includes(filterValueTEMP.toLowerCase())));
     };
 
-    // need to fix it, used to work in v1 and v2, currently is v3
     const sortBy = (query) => {
         if(!query) return;
         if(isAscending)
@@ -92,10 +70,6 @@ const StudentList = ({ students }) => {
 
                     <div style={{display: "inline-flex", margin: "0 20px" }}>
                         Sort:
-                        {/* <button onClick={() => sortBy(SORT_QUERY.BY_NAME)}>Sort by Name {isNameAscending ? "+" : "-"}</button>
-                        <button onClick={() => sortBy(SORT_QUERY.BY_EMAIL)}>Sort by Email {isEmailAscending ? "+" : "-"}</button>
-                        <button onClick={() => sortBy(SORT_QUERY.BY_CLASS)}>Sort by Class {isClassAscending ? "+" : "-"}</button> */}
-
                         <input type="checkbox" checked={isAscending} onChange={e => setIsAscending(e.target.checked)}/>
                         <select onChange={e => setQuery(e.target.value)}>
                             <option value="">Sort by</option>
